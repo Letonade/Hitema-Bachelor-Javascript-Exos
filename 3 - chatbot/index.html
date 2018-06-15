@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app="chatBotApp">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+    <script src="chatBot.js"></script>
+    <script src="botQuestion.js"></script>
+    <link rel="stylesheet" href="chatBot.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css">
+  </head>
+  <body class="chat">
+    <h2>Juger sa douleur</h2>
+    <div ng-controller="chatBotListController">
+      <!-- Channel de discussion -->
+      <div ng-repeat="text in content">
+
+        <!-- Si l'utilisateur parle -->
+        <div ng-if='text.isDark === false' class="container">
+          <img src="./{{text.name}}.png" alt="Ava">
+          <p>{{text.mess[0]}}</p>
+          <li ng-repeat="part in text.mess" ng-if="$index != 0">{{part}}</li>
+          <span class="time-right">{{text.date}}</span>
+        </div>
+
+        <!-- Si le bot parle -->
+        <div ng-if='text.isDark === true' class="container darker">
+          <img src="./{{text.name}}.png" alt="Ava" class="right">
+          <p>{{text.mess[0]}}</p>
+          <li ng-repeat="part in text.mess" ng-if="$index != 0">{{part}}</li>
+          <span class="time-left">{{text.date}}</span>
+        </div>
+
+      </div>
+      <!-- Zone de réponse -->
+      <div class="container">
+          <form>
+          <input class="saisiText" placeholder="Talk to me" type="text" ng-model="reponse" />
+          <button ng-if="botTurn === false" class="sender" ng-click="addUserMessage()" >Send</button>
+          <button ng-if="botTurn === true" class="sender" ng-click="addBotMessage(['pffff, prêt ?'])" >Se réconcilier</button>
+          <h3 ng-if="botTurn === true">Waiting for the bot.</h3>
+          </form>
+        <span class="time-right"></span>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- 
+Copyright 2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

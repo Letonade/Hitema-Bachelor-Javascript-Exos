@@ -1,0 +1,98 @@
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
+
+/* Chat containers */
+body h2{
+    color: lightgrey;
+}
+
+.chat {
+    background-color: #222;
+    margin-top: 20px;
+}
+
+.container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    min-width: 500px;
+}
+
+.sender {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.sender:hover {
+	background-color:#ccc;
+}
+
+.sender:active {
+	background-color:#f1f1f1;
+}
+
+.saisiText {
+	padding: 10px;
+    margin: 10px 0;
+    width: 85%;
+}
+
+/* Darker chat container */
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
+}
+
+/* Clear floats */
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Style images */
+.container img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+    box-shadow: 3px 3px 8px #555; 
+}
+
+.container li {
+	margin-left: 20px;
+	margin-bottom: 5px;
+}
+
+/* Style the right image */
+.container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
+}
+
+/* Style time text */
+.time-right {
+    float: right;
+    color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+    float: left;
+    color: #999;
+} 
+
+/*
+Copyright 2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
